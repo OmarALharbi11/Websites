@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAQHU Coffee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/10b4e51da3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-mug-saucer"></i> TAQHU
+            </a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+                <li><a href="#home" class="navbar__link">الصفحة الرئيسية</a></li>
+                <li><a href="#services" class="navbar__link">خدمة العملاء</a></li>
+                <li><a href="#contact" class="navbar__link">تواصل معنا</a></li>
+                <li><a href="#login" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
+            </ul>
+
+            <div class="user-area">
+                <span id="welcome-text"></span>
+                <button id="logout-btn" class="btn btn-small">تسجيل خروج</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>!نورتنا بمتجر تقهو</h1>
+                <p>قهوة مختصة توصلك لبيتك.</p>
+                <a href="#login" class="btn">ابدأ الان!</a>
+            </div>
+            <div class="hero-image">
+                <!-- You can change this to your own image -->
+                <img src="pic1.svg" alt="Coffee illustration">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>حمصة المحصول بحب</h3>
+                    <p>اخترنا محاصيل القهوة لكم من انقى و اعرق المزارع بالعالم.</p>
+                </div>
+                <div class="service-card">
+                    <h3>الاشتراكات الشهرية</h3>
+                    <p>ما تخلص القهوة عليك مع عروضنا.</p>
+                </div>
+                <div class="service-card">
+                    <h3>عينة مجانية</h3>
+                    <p>20 قرام عينة من القهوة الكولومبية لتجربة الذ محصول فاكهي حمضي </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="login-section">
+        <div class="container login-container">
+            <h2>تسجيل دخول العملاء</h2>
+            <p class="login-description">
+                سجل الان للحصول على اجود محاصيل القهوة.
+            </p>
+
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">اسم المسخدم</label>
+                    <input id="username" type="text" placeholder="Enter username" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input id="password" type="password" placeholder="Enter password" required />
+                </div>
+
+                <button type="submit" class="btn btn-full">تسجيل دخول</button>
+                <p id="login-error" class="error-message"></p>
+                <p class="login-hint">
+                    Demo users: <strong>john / 1234</strong>, <strong>sarah / pass</strong>, <strong>mike / abcd</strong>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dashboard (Only when logged in) -->
+    <section id="dashboard" class="dashboard-section hidden">
+        <div class="container">
+            <h2>قائمتك </h2>
+            <p> الحساب الشخصي</p>
+
+            <div class="dashboard-card">
+                <p><strong>الاسم الكامل:</strong> <span id="dash-name"></span></p>
+                <p><strong>اسم المسخدم:</strong> <span id="dash-username"></span></p>
+                <p><strong>محصولك المفضل:</strong> <span id="dash-roast"></span></p>
+                <p><strong>الاشتراك:</strong> <span id="dash-subscription"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <p>Contact us at: <a href="mailto:hello@taqhu.com">info@taqhu.com</a></p>
+            <p>© <span id="year"></span> TAQHU Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
