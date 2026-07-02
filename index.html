@@ -1,126 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAQHU Coffee</title>
+    <title>TAQAHO Coffee</title>
+    <meta name="description" content="قهوة مختصة توصلك لبيتك - تسوق أجود محاصيل القهوة واشترك في عروضنا الشهرية مع تقهو." />
+    <link rel="icon" type="image/svg+xml" href="pic1.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/10b4e51da3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/10b4e51da3.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#home" class="logo">
-                <i class="fa-solid fa-mug-saucer"></i> TAQHU
+                <i class="fa-solid fa-mug-saucer"></i> TAQAHO
             </a>
 
-            <div class="navbar__toggle" id="mobile-menu">
+            <button class="navbar__toggle" id="mobile-menu" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navbar-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
 
-            <ul class="navbar__menu">
+            <ul class="navbar__menu" id="navbar-menu">
                 <li><a href="#home" class="navbar__link">الصفحة الرئيسية</a></li>
+                <li><a href="#menu" class="navbar__link">المنتجات</a></li>
                 <li><a href="#services" class="navbar__link">خدمة العملاء</a></li>
+                <li><a href="#testimonials" class="navbar__link">آراء العملاء</a></li>
+                <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
                 <li><a href="#contact" class="navbar__link">تواصل معنا</a></li>
                 <li><a href="#login" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
             </ul>
 
-            <div class="user-area">
-                <span id="welcome-text"></span>
-                <button id="logout-btn" class="btn btn-small">تسجيل خروج</button>
+            <div class="navbar__actions">
+                <div class="cart-wrapper">
+                    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="السلة" aria-expanded="false" aria-controls="cart-dropdown">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+                    <div class="cart-dropdown" id="cart-dropdown">
+                        <div class="cart-dropdown-header">سلة المشتريات</div>
+                        <p class="cart-empty" id="cart-empty">سلتك فارغة</p>
+                        <ul class="cart-items" id="cart-items"></ul>
+                        <div class="cart-footer" id="cart-footer">
+                            <div class="cart-subtotal">الإجمالي: <span id="cart-subtotal">0</span> ر.س</div>
+                            <button class="btn btn-small btn-full" id="cart-clear">إفراغ السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="icon-btn" aria-label="تبديل الوضع الليلي">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="user-area">
+                    <span id="welcome-text"></span>
+                    <button id="logout-btn" class="btn btn-small">تسجيل خروج</button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>!نورتنا بمتجر تقهو</h1>
-                <p>قهوة مختصة توصلك لبيتك.</p>
-                <a href="#login" class="btn">ابدأ الان!</a>
+    <main id="main">
+        <!-- Hero Section -->
+        <header id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">☕ قهوة مختصة</span>
+                    <h1>!نورتنا بمتجر تقهو</h1>
+                    <p>قهوة مختصة توصلك لبيتك.</p>
+                    <div class="hero-actions">
+                        <a href="#login" class="btn">ابدأ الان!</a>
+                        <a href="#menu" class="btn btn-outline">تصفح المنتجات</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="pic1.svg" alt="رسم توضيحي لكوب قهوة ومستلزمات تحميص القهوة" width="800" height="658" />
+                </div>
             </div>
-            <div class="hero-image">
-                <!-- You can change this to your own image -->
-                <img src="pic1.svg" alt="Coffee illustration">
-            </div>
+        </header>
+
+        <!-- Trust badges -->
+        <div class="trust-badges">
+            <div class="trust-badge"><i class="fa-solid fa-truck-fast"></i><span>توصيل سريع</span></div>
+            <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i><span>ضمان الجودة</span></div>
+            <div class="trust-badge"><i class="fa-solid fa-lock"></i><span>دفع آمن</span></div>
+            <div class="trust-badge"><i class="fa-solid fa-headset"></i><span>دعم على مدار الساعة</span></div>
         </div>
-    </header>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">خدماتنا</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>حمصة المحصول بحب</h3>
-                    <p>اخترنا محاصيل القهوة لكم من انقى و اعرق المزارع بالعالم.</p>
+        <!-- About / Stats -->
+        <section id="about" class="about">
+            <div class="container about-content">
+                <div class="about-text reveal">
+                    <h2 class="section-title" style="text-align: right;">قصة تقهو</h2>
+                    <p>بدأنا رحلتنا بشغف بسيط: تقديم فنجان قهوة يستحق الانتظار. نختار حبوبنا يدويًا من أعرق المزارع حول العالم، ونحمصها بعناية لنوصلك أفضل نكهة ممكنة إلى باب بيتك.</p>
+                    <p>اليوم يثق بنا آلاف العملاء أسبوعيًا، ونفخر بأن نكون جزءًا من صباحهم.</p>
+                    <a href="tech.html" class="about-link">اقرأ قصتنا كاملة <i class="fa-solid fa-arrow-left"></i></a>
                 </div>
-                <div class="service-card">
-                    <h3>الاشتراكات الشهرية</h3>
-                    <p>ما تخلص القهوة عليك مع عروضنا.</p>
-                </div>
-                <div class="service-card">
-                    <h3>عينة مجانية</h3>
-                    <p>20 قرام عينة من القهوة الكولومبية لتجربة الذ محصول فاكهي حمضي </p>
+                <div class="stats-grid">
+                    <div class="stat-card reveal">
+                        <span class="stat-number">+5000</span>
+                        <span class="stat-label">عميل سعيد</span>
+                    </div>
+                    <div class="stat-card reveal">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">تقييم العملاء</span>
+                    </div>
+                    <div class="stat-card reveal">
+                        <span class="stat-number">+15</span>
+                        <span class="stat-label">دولة توريد</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Login Section -->
-    <section id="login" class="login-section">
-        <div class="container login-container">
-            <h2>تسجيل دخول العملاء</h2>
-            <p class="login-description">
-                سجل الان للحصول على اجود محاصيل القهوة.
-            </p>
-
-            <form id="login-form" class="login-form">
-                <div class="form-group">
-                    <label for="username">اسم المسخدم</label>
-                    <input id="username" type="text" placeholder="Enter username" required />
+        <!-- Products / Menu -->
+        <section id="menu" class="products">
+            <div class="container">
+                <h2 class="section-title">منتجاتنا</h2>
+                <div class="products-grid">
+                    <div class="product-card reveal">
+                        <span class="product-badge">الأكثر مبيعًا</span>
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص متوسط</h3>
+                        <p>توازن مثالي بين الحموضة والمرارة، مناسب لجميع طرق التحضير.</p>
+                        <span class="product-price">45 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="45">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص غامق</h3>
+                        <p>نكهة قوية وجريئة لعشاق القهوة المركزة.</p>
+                        <span class="product-price">48 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="48">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <span class="product-badge">جديد</span>
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص فاتح</h3>
+                        <p>نكهات فاكهية ورائحة زهرية مميزة تناسب محبي الخفة.</p>
+                        <span class="product-price">50 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="50">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <span class="product-badge">مختص</span>
+                        <div class="product-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>حبوب كولومبية مختصة</h3>
+                        <p>من أجود مزارع كولومبيا، بحموضة متوازنة ونكهة فاكهية.</p>
+                        <span class="product-price">65 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="65">أضف إلى السلة</button>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="password">كلمة المرور</label>
-                    <input id="password" type="password" placeholder="Enter password" required />
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+                        <h3>حمصة المحصول بحب</h3>
+                        <p>اخترنا محاصيل القهوة لكم من انقى و اعرق المزارع بالعالم.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-repeat"></i></div>
+                        <h3>الاشتراكات الشهرية</h3>
+                        <p>ما تخلص القهوة عليك مع عروضنا.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-gift"></i></div>
+                        <h3>عينة مجانية</h3>
+                        <p>20 قرام عينة من القهوة الكولومبية لتجربة الذ محصول فاكهي حمضي</p>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <button type="submit" class="btn btn-full">تسجيل دخول</button>
-                <p id="login-error" class="error-message"></p>
-                <p class="login-hint">
-                    Demo users: <strong>john / 1234</strong>, <strong>sarah / pass</strong>, <strong>mike / abcd</strong>
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">آراء عملائنا</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-quote">"أفضل قهوة جربتها، التوصيل سريع والتغليف ممتاز!"</p>
+                        <p class="testimonial-author">أحمد سالم</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-quote">"الاشتراك الشهري وفر علي وقت كبير، ما عاد أنسى أطلب قهوتي."</p>
+                        <p class="testimonial-author">نورة العتيبي</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★☆</div>
+                        <p class="testimonial-quote">"حمصة المحصول الفاتح رائعة، نكهة فواكه واضحة."</p>
+                        <p class="testimonial-author">فيصل الدوسري</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            كم تستغرق مدة التوصيل؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>عادة يصل طلبك خلال 2-4 أيام عمل داخل المدن الرئيسية.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            هل يمكنني إلغاء الاشتراك الشهري في أي وقت؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، يمكنك الإلغاء أو تعديل الاشتراك في أي وقت من صفحة حسابك.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            من أين تأتي حبوب القهوة؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نستورد أجود المحاصيل من مزارع مختارة في كولومبيا وإثيوبيا والبرازيل.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            هل تقدمون عينات مجانية؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، نوفر عينة 20 جرام مجانية مع أول طلب لعملائنا الجدد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="login-section">
+            <div class="container login-container">
+                <h2>تسجيل دخول العملاء</h2>
+                <p class="login-description">
+                    سجل الان للحصول على اجود محاصيل القهوة.
                 </p>
-            </form>
-        </div>
-    </section>
 
-    <!-- Dashboard (Only when logged in) -->
-    <section id="dashboard" class="dashboard-section hidden">
-        <div class="container">
-            <h2>قائمتك </h2>
-            <p> الحساب الشخصي</p>
+                <form id="login-form" class="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="username">اسم المستخدم</label>
+                        <input id="username" type="text" placeholder="اسم المستخدم" autocomplete="username" required />
+                    </div>
 
-            <div class="dashboard-card">
-                <p><strong>الاسم الكامل:</strong> <span id="dash-name"></span></p>
-                <p><strong>اسم المسخدم:</strong> <span id="dash-username"></span></p>
-                <p><strong>محصولك المفضل:</strong> <span id="dash-roast"></span></p>
-                <p><strong>الاشتراك:</strong> <span id="dash-subscription"></span></p>
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input id="password" type="password" placeholder="كلمة المرور" autocomplete="current-password" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-full">تسجيل دخول</button>
+                    <p id="login-error" class="error-message" role="alert"></p>
+                    <p class="login-hint">
+                        Demo users: <strong>john / 1234</strong>, <strong>sarah / pass</strong>, <strong>mike / abcd</strong>
+                    </p>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Dashboard (Only when logged in) -->
+        <section id="dashboard" class="dashboard-section hidden">
+            <div class="container">
+                <h2>قائمتك</h2>
+                <p>الحساب الشخصي</p>
+
+                <div class="dashboard-card">
+                    <p><strong>الاسم الكامل:</strong> <span id="dash-name"></span></p>
+                    <p><strong>اسم المستخدم:</strong> <span id="dash-username"></span></p>
+                    <p><strong>محصولك المفضل:</strong> <span id="dash-roast"></span></p>
+                    <p><strong>الاشتراك:</strong> <span id="dash-subscription"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Contact / Footer -->
     <footer id="contact" class="footer">
         <div class="container footer-content">
-            <p>Contact us at: <a href="mailto:hello@taqhu.com">info@taqhu.com</a></p>
-            <p>© <span id="year"></span> TAQHU Coffee. All rights reserved.</p>
+            <p>Contact us at: <a href="mailto:hello@taqaho.com">hello@taqaho.com</a></p>
+            <p>© <span id="year"></span> TAQAHO Coffee. All rights reserved.</p>
+
+            <div class="newsletter">
+                <p class="newsletter-title">اشترك في نشرتنا البريدية لأحدث العروض</p>
+                <form id="newsletter-form" class="newsletter-form" novalidate>
+                    <label for="newsletter-email" class="sr-only">البريد الإلكتروني</label>
+                    <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" required />
+                    <button type="submit" class="btn btn-small">اشترك</button>
+                </form>
+                <p id="newsletter-message" class="newsletter-message"></p>
+            </div>
         </div>
     </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="العودة إلى الأعلى">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="app.js"></script>
 </body>

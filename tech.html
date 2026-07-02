@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قصتنا - TAQAHO Coffee</title>
+    <meta name="description" content="تعرف على قصة تقهو، رحلتنا مع القهوة المختصة، قيمنا، وشهاداتنا في الجودة والاستدامة." />
+    <link rel="icon" type="image/svg+xml" href="pic1.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/10b4e51da3.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html#home" class="logo">
+                <i class="fa-solid fa-mug-saucer"></i> TAQAHO
+            </a>
+
+            <button class="navbar__toggle" id="mobile-menu" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navbar-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="navbar__menu" id="navbar-menu">
+                <li><a href="index.html#home" class="navbar__link">الصفحة الرئيسية</a></li>
+                <li><a href="index.html#menu" class="navbar__link">المنتجات</a></li>
+                <li><a href="index.html#services" class="navbar__link">خدمة العملاء</a></li>
+                <li><a href="index.html#testimonials" class="navbar__link">آراء العملاء</a></li>
+                <li><a href="tech.html" class="navbar__link active">قصتنا</a></li>
+                <li><a href="index.html#contact" class="navbar__link">تواصل معنا</a></li>
+                <li><a href="index.html#login" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
+            </ul>
+
+            <div class="navbar__actions">
+                <div class="cart-wrapper">
+                    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="السلة" aria-expanded="false" aria-controls="cart-dropdown">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+                    <div class="cart-dropdown" id="cart-dropdown">
+                        <div class="cart-dropdown-header">سلة المشتريات</div>
+                        <p class="cart-empty" id="cart-empty">سلتك فارغة</p>
+                        <ul class="cart-items" id="cart-items"></ul>
+                        <div class="cart-footer" id="cart-footer">
+                            <div class="cart-subtotal">الإجمالي: <span id="cart-subtotal">0</span> ر.س</div>
+                            <button class="btn btn-small btn-full" id="cart-clear">إفراغ السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="icon-btn" aria-label="تبديل الوضع الليلي">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="user-area">
+                    <span id="welcome-text"></span>
+                    <button id="logout-btn" class="btn btn-small">تسجيل خروج</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Story hero -->
+        <header class="story-hero">
+            <div class="container">
+                <span class="hero-badge">☕ قصتنا</span>
+                <h1 class="section-title">من حبة بن إلى فنجان يستحق الانتظار</h1>
+                <p>رحلة تقهو بدأت بشغف بسيط وتحولت إلى وجهة آلاف عشاق القهوة المختصة في المنطقة.</p>
+            </div>
+        </header>
+
+        <!-- Story -->
+        <section class="story-section">
+            <div class="container">
+                <p>
+                    تأسست تقهو من إيمان راسخ بأن القهوة الجيدة تستحق رحلة عناية كاملة، من اختيار المزرعة إلى
+                    التحميص، وصولًا إلى كوبك. نعمل مباشرة مع مزارعين حول العالم لضمان جودة استثنائية وأسعار عادلة
+                    للجميع.
+                </p>
+                <p>
+                    اليوم، لا نزال نحمّص كل دفعة بكميات صغيرة لضمان الطزاجة، ونوصلها إليك خلال أيام من التحميص، لأن
+                    القهوة الطازجة فرق لا يمكن تعويضه.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <span class="timeline-year">2019</span>
+                        <p>انطلاق تقهو بفكرة بسيطة: قهوة مختصة توصلك لبيتك.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span class="timeline-year">2021</span>
+                        <p>أول شراكة توريد مباشر مع مزارع في كولومبيا.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span class="timeline-year">2023</span>
+                        <p>إطلاق نظام الاشتراكات الشهرية لعملائنا الدائمين.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span class="timeline-year">2025</span>
+                        <p>تجاوزنا 5000 عميل سعيد حول المملكة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">قيمنا</h2>
+                <div class="values-grid">
+                    <div class="value-card reveal">
+                        <i class="fa-solid fa-award"></i>
+                        <h3>جودة مضمونة</h3>
+                        <p>نفحص كل دفعة تحميص للتأكد من مطابقتها لمعاييرنا قبل التوصيل.</p>
+                    </div>
+                    <div class="value-card reveal">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>استدامة</h3>
+                        <p>نلتزم بممارسات توريد عادلة وصديقة للبيئة مع شركائنا من المزارعين.</p>
+                    </div>
+                    <div class="value-card reveal">
+                        <i class="fa-solid fa-fire"></i>
+                        <h3>شغف حقيقي</h3>
+                        <p>فريقنا مكوّن من عشاق قهوة حقيقيين يختبرون كل دفعة بأنفسهم.</p>
+                    </div>
+                </div>
+
+                <div class="certifications">
+                    <span class="certification-badge"><i class="fa-solid fa-certificate"></i> شهادة جودة دولية</span>
+                    <span class="certification-badge"><i class="fa-solid fa-handshake"></i> شراكة تجارة عادلة</span>
+                    <span class="certification-badge"><i class="fa-solid fa-people-group"></i> دعم المزارعين المحليين</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="login-section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">جاهز تجرب قهوتنا؟</h2>
+                <a href="index.html#menu" class="btn">تصفح المنتجات</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <p>Contact us at: <a href="mailto:hello@taqaho.com">hello@taqaho.com</a></p>
+            <p>© <span id="year"></span> TAQAHO Coffee. All rights reserved.</p>
+
+            <div class="newsletter">
+                <p class="newsletter-title">اشترك في نشرتنا البريدية لأحدث العروض</p>
+                <form id="newsletter-form" class="newsletter-form" novalidate>
+                    <label for="newsletter-email" class="sr-only">البريد الإلكتروني</label>
+                    <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" required />
+                    <button type="submit" class="btn btn-small">اشترك</button>
+                </form>
+                <p id="newsletter-message" class="newsletter-message"></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="العودة إلى الأعلى">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
