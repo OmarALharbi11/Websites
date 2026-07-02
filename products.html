@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAQAHO Coffee</title>
-    <meta name="description" content="قهوة مختصة توصلك لبيتك - تسوق أجود محاصيل القهوة واشترك في عروضنا الشهرية مع تقهو." />
+    <title>المنتجات - TAQAHO Coffee</title>
+    <meta name="description" content="تصفح تشكيلة تقهو من محاصيل القهوة المختصة وأضف ما يعجبك إلى سلتك." />
     <link rel="icon" type="image/svg+xml" href="pic1.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,8 +29,8 @@
             </button>
 
             <ul class="navbar__menu" id="navbar-menu">
-                <li><a href="index.html" class="navbar__link active">الصفحة الرئيسية</a></li>
-                <li><a href="products.html" class="navbar__link">المنتجات</a></li>
+                <li><a href="index.html" class="navbar__link">الصفحة الرئيسية</a></li>
+                <li><a href="products.html" class="navbar__link active">المنتجات</a></li>
                 <li><a href="services.html" class="navbar__link">خدماتنا</a></li>
                 <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
                 <li><a href="contact.html" class="navbar__link">تواصل معنا</a></li>
@@ -66,64 +66,49 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">☕ قهوة مختصة</span>
-                    <h1>!نورتنا بمتجر تقهو</h1>
-                    <p>قهوة مختصة توصلك لبيتك.</p>
-                    <div class="hero-actions">
-                        <a href="products.html" class="btn">تصفح المنتجات</a>
-                        <a href="tech.html" class="btn btn-outline">تعرف على قصتنا</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="pic1.svg" alt="رسم توضيحي لكوب قهوة ومستلزمات تحميص القهوة" width="800" height="658" />
-                </div>
+        <header class="story-hero">
+            <div class="container">
+                <span class="hero-badge">☕ المتجر</span>
+                <h1 class="section-title">منتجاتنا</h1>
+                <p>تشكيلة مختارة من محاصيل القهوة المختصة، محمّصة بعناية وتصل طازجة إلى بابك.</p>
             </div>
         </header>
 
-        <!-- Trust badges -->
-        <div class="trust-badges">
-            <div class="trust-badge"><i class="fa-solid fa-truck-fast"></i><span>توصيل سريع</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i><span>ضمان الجودة</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-lock"></i><span>دفع آمن</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-headset"></i><span>دعم على مدار الساعة</span></div>
-        </div>
-
-        <!-- About / Stats -->
-        <section class="about">
-            <div class="container about-content">
-                <div class="about-text reveal">
-                    <h2 class="section-title" style="text-align: right;">قصة تقهو</h2>
-                    <p>بدأنا رحلتنا بشغف بسيط: تقديم فنجان قهوة يستحق الانتظار. نختار حبوبنا يدويًا من أعرق المزارع حول العالم، ونحمصها بعناية لنوصلك أفضل نكهة ممكنة إلى باب بيتك.</p>
-                    <p>اليوم يثق بنا آلاف العملاء أسبوعيًا، ونفخر بأن نكون جزءًا من صباحهم.</p>
-                    <a href="tech.html" class="about-link">اقرأ قصتنا كاملة <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+5000</span>
-                        <span class="stat-label">عميل سعيد</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">4.9</span>
-                        <span class="stat-label">تقييم العملاء</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+15</span>
-                        <span class="stat-label">دولة توريد</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA banner -->
-        <section class="cta-banner">
+        <section class="products">
             <div class="container">
-                <h2 class="section-title">جاهز تطلب قهوتك؟</h2>
-                <p>تصفح تشكيلتنا من محاصيل القهوة المختصة واطلب الآن.</p>
-                <a href="products.html" class="btn">تسوق الآن</a>
+                <div class="products-grid">
+                    <div class="product-card reveal">
+                        <span class="product-badge">الأكثر مبيعًا</span>
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص متوسط</h3>
+                        <p>توازن مثالي بين الحموضة والمرارة، مناسب لجميع طرق التحضير.</p>
+                        <span class="product-price">45 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="45">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص غامق</h3>
+                        <p>نكهة قوية وجريئة لعشاق القهوة المركزة.</p>
+                        <span class="product-price">48 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="48">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <span class="product-badge">جديد</span>
+                        <div class="product-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>تحميص فاتح</h3>
+                        <p>نكهات فاكهية ورائحة زهرية مميزة تناسب محبي الخفة.</p>
+                        <span class="product-price">50 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="50">أضف إلى السلة</button>
+                    </div>
+                    <div class="product-card reveal">
+                        <span class="product-badge">مختص</span>
+                        <div class="product-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>حبوب كولومبية مختصة</h3>
+                        <p>من أجود مزارع كولومبيا، بحموضة متوازنة ونكهة فاكهية.</p>
+                        <span class="product-price">65 ر.س</span>
+                        <button class="btn btn-full add-to-cart" data-price="65">أضف إلى السلة</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

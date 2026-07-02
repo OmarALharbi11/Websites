@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAQAHO Coffee</title>
-    <meta name="description" content="قهوة مختصة توصلك لبيتك - تسوق أجود محاصيل القهوة واشترك في عروضنا الشهرية مع تقهو." />
+    <title>حسابي - TAQAHO Coffee</title>
+    <meta name="description" content="لوحة حسابك في تقهو - تفاصيل اشتراكك ومحصولك المفضل." />
     <link rel="icon" type="image/svg+xml" href="pic1.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,12 +29,12 @@
             </button>
 
             <ul class="navbar__menu" id="navbar-menu">
-                <li><a href="index.html" class="navbar__link active">الصفحة الرئيسية</a></li>
+                <li><a href="index.html" class="navbar__link">الصفحة الرئيسية</a></li>
                 <li><a href="products.html" class="navbar__link">المنتجات</a></li>
                 <li><a href="services.html" class="navbar__link">خدماتنا</a></li>
                 <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
                 <li><a href="contact.html" class="navbar__link">تواصل معنا</a></li>
-                <li><a href="login.html" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
+                <li><a href="account.html" class="navbar__link active" id="login-nav-link">حسابي</a></li>
             </ul>
 
             <div class="navbar__actions">
@@ -66,64 +66,17 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">☕ قهوة مختصة</span>
-                    <h1>!نورتنا بمتجر تقهو</h1>
-                    <p>قهوة مختصة توصلك لبيتك.</p>
-                    <div class="hero-actions">
-                        <a href="products.html" class="btn">تصفح المنتجات</a>
-                        <a href="tech.html" class="btn btn-outline">تعرف على قصتنا</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="pic1.svg" alt="رسم توضيحي لكوب قهوة ومستلزمات تحميص القهوة" width="800" height="658" />
-                </div>
-            </div>
-        </header>
-
-        <!-- Trust badges -->
-        <div class="trust-badges">
-            <div class="trust-badge"><i class="fa-solid fa-truck-fast"></i><span>توصيل سريع</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i><span>ضمان الجودة</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-lock"></i><span>دفع آمن</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-headset"></i><span>دعم على مدار الساعة</span></div>
-        </div>
-
-        <!-- About / Stats -->
-        <section class="about">
-            <div class="container about-content">
-                <div class="about-text reveal">
-                    <h2 class="section-title" style="text-align: right;">قصة تقهو</h2>
-                    <p>بدأنا رحلتنا بشغف بسيط: تقديم فنجان قهوة يستحق الانتظار. نختار حبوبنا يدويًا من أعرق المزارع حول العالم، ونحمصها بعناية لنوصلك أفضل نكهة ممكنة إلى باب بيتك.</p>
-                    <p>اليوم يثق بنا آلاف العملاء أسبوعيًا، ونفخر بأن نكون جزءًا من صباحهم.</p>
-                    <a href="tech.html" class="about-link">اقرأ قصتنا كاملة <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+5000</span>
-                        <span class="stat-label">عميل سعيد</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">4.9</span>
-                        <span class="stat-label">تقييم العملاء</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+15</span>
-                        <span class="stat-label">دولة توريد</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA banner -->
-        <section class="cta-banner">
+        <section class="dashboard-section">
             <div class="container">
-                <h2 class="section-title">جاهز تطلب قهوتك؟</h2>
-                <p>تصفح تشكيلتنا من محاصيل القهوة المختصة واطلب الآن.</p>
-                <a href="products.html" class="btn">تسوق الآن</a>
+                <h2 class="section-title" style="text-align: right;">قائمتك</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">الحساب الشخصي</p>
+
+                <div class="dashboard-card">
+                    <p><strong>الاسم الكامل:</strong> <span id="dash-name"></span></p>
+                    <p><strong>اسم المستخدم:</strong> <span id="dash-username"></span></p>
+                    <p><strong>محصولك المفضل:</strong> <span id="dash-roast"></span></p>
+                    <p><strong>الاشتراك:</strong> <span id="dash-subscription"></span></p>
+                </div>
             </div>
         </section>
     </main>

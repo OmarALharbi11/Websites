@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAQAHO Coffee</title>
-    <meta name="description" content="قهوة مختصة توصلك لبيتك - تسوق أجود محاصيل القهوة واشترك في عروضنا الشهرية مع تقهو." />
+    <title>تواصل معنا - TAQAHO Coffee</title>
+    <meta name="description" content="تواصل مع فريق تقهو - نسعد بأسئلتكم واستفساراتكم." />
     <link rel="icon" type="image/svg+xml" href="pic1.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,11 +29,11 @@
             </button>
 
             <ul class="navbar__menu" id="navbar-menu">
-                <li><a href="index.html" class="navbar__link active">الصفحة الرئيسية</a></li>
+                <li><a href="index.html" class="navbar__link">الصفحة الرئيسية</a></li>
                 <li><a href="products.html" class="navbar__link">المنتجات</a></li>
                 <li><a href="services.html" class="navbar__link">خدماتنا</a></li>
                 <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
-                <li><a href="contact.html" class="navbar__link">تواصل معنا</a></li>
+                <li><a href="contact.html" class="navbar__link active">تواصل معنا</a></li>
                 <li><a href="login.html" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
             </ul>
 
@@ -66,64 +66,64 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">☕ قهوة مختصة</span>
-                    <h1>!نورتنا بمتجر تقهو</h1>
-                    <p>قهوة مختصة توصلك لبيتك.</p>
-                    <div class="hero-actions">
-                        <a href="products.html" class="btn">تصفح المنتجات</a>
-                        <a href="tech.html" class="btn btn-outline">تعرف على قصتنا</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="pic1.svg" alt="رسم توضيحي لكوب قهوة ومستلزمات تحميص القهوة" width="800" height="658" />
-                </div>
+        <header class="story-hero">
+            <div class="container">
+                <span class="hero-badge">📩 تواصل معنا</span>
+                <h1 class="section-title">نسعد بتواصلك معنا</h1>
+                <p>لديك سؤال أو ملاحظة؟ فريقنا جاهز للرد عليك.</p>
             </div>
         </header>
 
-        <!-- Trust badges -->
-        <div class="trust-badges">
-            <div class="trust-badge"><i class="fa-solid fa-truck-fast"></i><span>توصيل سريع</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i><span>ضمان الجودة</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-lock"></i><span>دفع آمن</span></div>
-            <div class="trust-badge"><i class="fa-solid fa-headset"></i><span>دعم على مدار الساعة</span></div>
-        </div>
-
-        <!-- About / Stats -->
-        <section class="about">
-            <div class="container about-content">
-                <div class="about-text reveal">
-                    <h2 class="section-title" style="text-align: right;">قصة تقهو</h2>
-                    <p>بدأنا رحلتنا بشغف بسيط: تقديم فنجان قهوة يستحق الانتظار. نختار حبوبنا يدويًا من أعرق المزارع حول العالم، ونحمصها بعناية لنوصلك أفضل نكهة ممكنة إلى باب بيتك.</p>
-                    <p>اليوم يثق بنا آلاف العملاء أسبوعيًا، ونفخر بأن نكون جزءًا من صباحهم.</p>
-                    <a href="tech.html" class="about-link">اقرأ قصتنا كاملة <i class="fa-solid fa-arrow-left"></i></a>
+        <section class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h3>البريد الإلكتروني</h3>
+                            <a href="mailto:hello@taqaho.com">hello@taqaho.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h3>الهاتف</h3>
+                            <span>966 12 345 6789+</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h3>الموقع</h3>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h3>ساعات العمل</h3>
+                            <span>يوميًا من 8 صباحًا حتى 11 مساءً</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+5000</span>
-                        <span class="stat-label">عميل سعيد</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">4.9</span>
-                        <span class="stat-label">تقييم العملاء</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">+15</span>
-                        <span class="stat-label">دولة توريد</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA banner -->
-        <section class="cta-banner">
-            <div class="container">
-                <h2 class="section-title">جاهز تطلب قهوتك؟</h2>
-                <p>تصفح تشكيلتنا من محاصيل القهوة المختصة واطلب الآن.</p>
-                <a href="products.html" class="btn">تسوق الآن</a>
+                <form id="contact-form" class="contact-form login-container reveal" novalidate>
+                    <h2>أرسل لنا رسالة</h2>
+                    <div class="form-group">
+                        <label for="contact-name">الاسم الكامل</label>
+                        <input id="contact-name" type="text" placeholder="اسمك الكامل" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">البريد الإلكتروني</label>
+                        <input id="contact-email" type="email" placeholder="بريدك الإلكتروني" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">الرسالة</label>
+                        <textarea id="contact-message" rows="4" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-full">إرسال الرسالة</button>
+                    <p id="contact-form-message" class="newsletter-message" role="alert"></p>
+                </form>
             </div>
         </section>
     </main>

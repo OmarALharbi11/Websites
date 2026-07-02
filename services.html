@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خدماتنا - TAQAHO Coffee</title>
+    <meta name="description" content="خدمات تقهو: حمصة بحب، اشتراكات شهرية، عينات مجانية، آراء عملائنا، والأسئلة الشائعة." />
+    <link rel="icon" type="image/svg+xml" href="pic1.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/10b4e51da3.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-saucer"></i> TAQAHO
+            </a>
+
+            <button class="navbar__toggle" id="mobile-menu" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navbar-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="navbar__menu" id="navbar-menu">
+                <li><a href="index.html" class="navbar__link">الصفحة الرئيسية</a></li>
+                <li><a href="products.html" class="navbar__link">المنتجات</a></li>
+                <li><a href="services.html" class="navbar__link active">خدماتنا</a></li>
+                <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
+                <li><a href="contact.html" class="navbar__link">تواصل معنا</a></li>
+                <li><a href="login.html" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
+            </ul>
+
+            <div class="navbar__actions">
+                <div class="cart-wrapper">
+                    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="السلة" aria-expanded="false" aria-controls="cart-dropdown">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+                    <div class="cart-dropdown" id="cart-dropdown">
+                        <div class="cart-dropdown-header">سلة المشتريات</div>
+                        <p class="cart-empty" id="cart-empty">سلتك فارغة</p>
+                        <ul class="cart-items" id="cart-items"></ul>
+                        <div class="cart-footer" id="cart-footer">
+                            <div class="cart-subtotal">الإجمالي: <span id="cart-subtotal">0</span> ر.س</div>
+                            <a href="checkout.html" class="btn btn-small btn-full">إتمام الشراء</a>
+                            <button class="btn btn-small btn-full btn-outline" id="cart-clear">إفراغ السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="icon-btn" aria-label="تبديل الوضع الليلي">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="user-area">
+                    <span id="welcome-text"></span>
+                    <button id="logout-btn" class="btn btn-small">تسجيل خروج</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="story-hero">
+            <div class="container">
+                <span class="hero-badge">✨ خدماتنا</span>
+                <h1 class="section-title">كل ما تحتاجه من قهوة</h1>
+                <p>من التحميص الطازج إلى الاشتراكات الشهرية، صممنا خدماتنا حول راحتك.</p>
+            </div>
+        </header>
+
+        <!-- Services -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+                        <h3>حمصة المحصول بحب</h3>
+                        <p>اخترنا محاصيل القهوة لكم من انقى و اعرق المزارع بالعالم.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-repeat"></i></div>
+                        <h3>الاشتراكات الشهرية</h3>
+                        <p>ما تخلص القهوة عليك مع عروضنا.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-gift"></i></div>
+                        <h3>عينة مجانية</h3>
+                        <p>20 قرام عينة من القهوة الكولومبية لتجربة الذ محصول فاكهي حمضي</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">آراء عملائنا</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-quote">"أفضل قهوة جربتها، التوصيل سريع والتغليف ممتاز!"</p>
+                        <p class="testimonial-author">أحمد سالم</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-quote">"الاشتراك الشهري وفر علي وقت كبير، ما عاد أنسى أطلب قهوتي."</p>
+                        <p class="testimonial-author">نورة العتيبي</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">★★★★☆</div>
+                        <p class="testimonial-quote">"حمصة المحصول الفاتح رائعة، نكهة فواكه واضحة."</p>
+                        <p class="testimonial-author">فيصل الدوسري</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            كم تستغرق مدة التوصيل؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>عادة يصل طلبك خلال 2-4 أيام عمل داخل المدن الرئيسية.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            هل يمكنني إلغاء الاشتراك الشهري في أي وقت؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، يمكنك الإلغاء أو تعديل الاشتراك في أي وقت من صفحة حسابك.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            من أين تأتي حبوب القهوة؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نستورد أجود المحاصيل من مزارع مختارة في كولومبيا وإثيوبيا والبرازيل.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            هل تقدمون عينات مجانية؟
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، نوفر عينة 20 جرام مجانية مع أول طلب لعملائنا الجدد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Contact us at: <a href="mailto:hello@taqaho.com">hello@taqaho.com</a></p>
+            <p>© <span id="year"></span> TAQAHO Coffee. All rights reserved.</p>
+
+            <div class="newsletter">
+                <p class="newsletter-title">اشترك في نشرتنا البريدية لأحدث العروض</p>
+                <form id="newsletter-form" class="newsletter-form" novalidate>
+                    <label for="newsletter-email" class="sr-only">البريد الإلكتروني</label>
+                    <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" required />
+                    <button type="submit" class="btn btn-small">اشترك</button>
+                </form>
+                <p id="newsletter-message" class="newsletter-message"></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="العودة إلى الأعلى">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>

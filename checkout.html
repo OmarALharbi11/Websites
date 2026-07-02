@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>قصتنا - TAQAHO Coffee</title>
-    <meta name="description" content="تعرف على قصة تقهو، رحلتنا مع القهوة المختصة، قيمنا، وشهاداتنا في الجودة والاستدامة." />
+    <title>إتمام الشراء - TAQAHO Coffee</title>
+    <meta name="description" content="راجع طلبك وأكمل بيانات التوصيل لإتمام عملية الشراء من تقهو." />
     <link rel="icon" type="image/svg+xml" href="pic1.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +32,7 @@
                 <li><a href="index.html" class="navbar__link">الصفحة الرئيسية</a></li>
                 <li><a href="products.html" class="navbar__link">المنتجات</a></li>
                 <li><a href="services.html" class="navbar__link">خدماتنا</a></li>
-                <li><a href="tech.html" class="navbar__link active">قصتنا</a></li>
+                <li><a href="tech.html" class="navbar__link">قصتنا</a></li>
                 <li><a href="contact.html" class="navbar__link">تواصل معنا</a></li>
                 <li><a href="login.html" class="navbar__link" id="login-nav-link">تسجيل الدخول</a></li>
             </ul>
@@ -66,84 +66,84 @@
     </nav>
 
     <main id="main">
-        <!-- Story hero -->
         <header class="story-hero">
             <div class="container">
-                <span class="hero-badge">☕ قصتنا</span>
-                <h1 class="section-title">من حبة بن إلى فنجان يستحق الانتظار</h1>
-                <p>رحلة تقهو بدأت بشغف بسيط وتحولت إلى وجهة آلاف عشاق القهوة المختصة في المنطقة.</p>
+                <span class="hero-badge">🛒 الطلب</span>
+                <h1 class="section-title">إتمام الشراء</h1>
+                <p>راجع طلبك وأكمل بيانات التوصيل والدفع.</p>
             </div>
         </header>
 
-        <!-- Story -->
-        <section class="story-section">
-            <div class="container">
-                <p>
-                    تأسست تقهو من إيمان راسخ بأن القهوة الجيدة تستحق رحلة عناية كاملة، من اختيار المزرعة إلى
-                    التحميص، وصولًا إلى كوبك. نعمل مباشرة مع مزارعين حول العالم لضمان جودة استثنائية وأسعار عادلة
-                    للجميع.
-                </p>
-                <p>
-                    اليوم، لا نزال نحمّص كل دفعة بكميات صغيرة لضمان الطزاجة، ونوصلها إليك خلال أيام من التحميص، لأن
-                    القهوة الطازجة فرق لا يمكن تعويضه.
-                </p>
-
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <span class="timeline-year">2019</span>
-                        <p>انطلاق تقهو بفكرة بسيطة: قهوة مختصة توصلك لبيتك.</p>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <span class="timeline-year">2021</span>
-                        <p>أول شراكة توريد مباشر مع مزارع في كولومبيا.</p>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <span class="timeline-year">2023</span>
-                        <p>إطلاق نظام الاشتراكات الشهرية لعملائنا الدائمين.</p>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <span class="timeline-year">2025</span>
-                        <p>تجاوزنا 5000 عميل سعيد حول المملكة.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Values -->
-        <section class="products">
-            <div class="container">
-                <h2 class="section-title">قيمنا</h2>
-                <div class="values-grid">
-                    <div class="value-card reveal">
-                        <i class="fa-solid fa-award"></i>
-                        <h3>جودة مضمونة</h3>
-                        <p>نفحص كل دفعة تحميص للتأكد من مطابقتها لمعاييرنا قبل التوصيل.</p>
-                    </div>
-                    <div class="value-card reveal">
-                        <i class="fa-solid fa-leaf"></i>
-                        <h3>استدامة</h3>
-                        <p>نلتزم بممارسات توريد عادلة وصديقة للبيئة مع شركائنا من المزارعين.</p>
-                    </div>
-                    <div class="value-card reveal">
-                        <i class="fa-solid fa-fire"></i>
-                        <h3>شغف حقيقي</h3>
-                        <p>فريقنا مكوّن من عشاق قهوة حقيقيين يختبرون كل دفعة بأنفسهم.</p>
-                    </div>
-                </div>
-
-                <div class="certifications">
-                    <span class="certification-badge"><i class="fa-solid fa-certificate"></i> شهادة جودة دولية</span>
-                    <span class="certification-badge"><i class="fa-solid fa-handshake"></i> شراكة تجارة عادلة</span>
-                    <span class="certification-badge"><i class="fa-solid fa-people-group"></i> دعم المزارعين المحليين</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="login-section">
+        <!-- Empty cart state -->
+        <section class="checkout-section hidden" id="checkout-empty-state">
             <div class="container" style="text-align: center;">
-                <h2 class="section-title">جاهز تجرب قهوتنا؟</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">سلتك فارغة حاليًا، أضف منتجات أولًا لإتمام الطلب.</p>
                 <a href="products.html" class="btn">تصفح المنتجات</a>
+            </div>
+        </section>
+
+        <!-- Checkout form -->
+        <section class="checkout-section hidden" id="checkout-form-section">
+            <div class="container checkout-grid">
+                <div class="checkout-summary reveal">
+                    <h2>ملخص الطلب</h2>
+                    <ul class="cart-items" id="checkout-items"></ul>
+                    <div class="checkout-totals">
+                        <div class="checkout-row"><span>المجموع الفرعي</span><span id="checkout-subtotal">0 ر.س</span></div>
+                        <div class="checkout-row"><span>الشحن</span><span id="checkout-shipping">15 ر.س</span></div>
+                        <div class="checkout-row checkout-total"><span>الإجمالي</span><span id="checkout-total">0 ر.س</span></div>
+                    </div>
+                </div>
+
+                <form id="checkout-form" class="checkout-form login-container reveal" novalidate>
+                    <h2>بيانات التوصيل</h2>
+                    <div class="form-group">
+                        <label for="checkout-name">الاسم الكامل</label>
+                        <input id="checkout-name" type="text" placeholder="اسمك الكامل" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-address">العنوان</label>
+                        <input id="checkout-address" type="text" placeholder="الحي والشارع والمدينة" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-phone">رقم الجوال</label>
+                        <input id="checkout-phone" type="tel" placeholder="05xxxxxxxx" required />
+                    </div>
+
+                    <h2>بيانات الدفع</h2>
+                    <p class="checkout-demo-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        هذا نموذج تجريبي لأغراض العرض التوضيحي فقط، لا يتم معالجة أو تخزين أي بيانات دفع حقيقية.
+                    </p>
+                    <div class="form-group">
+                        <label for="checkout-card">رقم البطاقة</label>
+                        <input id="checkout-card" type="text" placeholder="0000 0000 0000 0000" required />
+                    </div>
+                    <div class="checkout-row-fields">
+                        <div class="form-group">
+                            <label for="checkout-expiry">تاريخ الانتهاء</label>
+                            <input id="checkout-expiry" type="text" placeholder="MM/YY" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-cvc">CVC</label>
+                            <input id="checkout-cvc" type="text" placeholder="123" required />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">تأكيد الطلب</button>
+                    <p id="checkout-error" class="error-message" role="alert"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Order confirmation -->
+        <section class="checkout-section hidden" id="checkout-confirmation">
+            <div class="container" style="text-align: center;">
+                <i class="fa-solid fa-circle-check checkout-success-icon"></i>
+                <h2 class="section-title">تم استلام طلبك بنجاح!</h2>
+                <p>رقم الطلب: <strong id="order-number"></strong></p>
+                <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">سنرسل تفاصيل الشحن إلى بريدك الإلكتروني قريبًا.</p>
+                <a href="products.html" class="btn">متابعة التسوق</a>
             </div>
         </section>
     </main>

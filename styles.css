@@ -465,18 +465,25 @@ input:focus-visible {
     color: var(--color-text-muted);
 }
 
-.login-form .form-group {
+.login-form .form-group,
+.contact-form .form-group,
+.checkout-form .form-group {
     margin-bottom: 1rem;
 }
 
-.login-form label {
+.login-form label,
+.contact-form label,
+.checkout-form label {
     display: block;
     margin-bottom: 0.4rem;
     font-size: 0.95rem;
     color: var(--color-text);
 }
 
-.login-form input {
+.login-form input,
+.contact-form input,
+.contact-form textarea,
+.checkout-form input {
     width: 100%;
     padding: 0.6rem 0.75rem;
     border-radius: 8px;
@@ -484,10 +491,15 @@ input:focus-visible {
     font-size: 0.95rem;
     background-color: var(--color-surface);
     color: var(--color-text);
+    font-family: inherit;
+    resize: vertical;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.login-form input:focus {
+.login-form input:focus,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.checkout-form input:focus {
     outline: none;
     border-color: var(--color-brand);
     box-shadow: 0 0 0 3px rgba(185, 119, 44, 0.2);
@@ -495,6 +507,12 @@ input:focus-visible {
 
 .login-form.shake {
     animation: shake 0.4s ease;
+}
+
+.login-container.contact-form,
+.login-container.checkout-form {
+    max-width: none;
+    margin: 0;
 }
 
 @keyframes shake {
@@ -1167,6 +1185,164 @@ input:focus-visible {
     font-weight: 600;
 }
 
+/* CTA banner (home page) */
+
+.cta-banner {
+    padding: 3rem 0 4rem;
+    text-align: center;
+}
+
+.cta-banner p {
+    color: var(--color-text-muted);
+    margin: 0.5rem 0 1.5rem;
+}
+
+/* Contact page */
+
+.contact-section {
+    padding: 3rem 0 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info-item i {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-bg-alt);
+    color: var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.contact-info-item h3 {
+    font-size: 1rem;
+    color: var(--color-heading);
+    margin-bottom: 0.2rem;
+}
+
+.contact-info-item a,
+.contact-info-item span {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Checkout page */
+
+.checkout-section {
+    padding: 2rem 0 4rem;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.checkout-summary {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.checkout-summary h2 {
+    margin-bottom: 1rem;
+    color: var(--color-heading);
+}
+
+.checkout-summary .cart-items {
+    max-height: none;
+    margin-bottom: 1rem;
+}
+
+.checkout-totals {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkout-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.checkout-total {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-heading);
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.checkout-form h2 {
+    margin-bottom: 1rem;
+    color: var(--color-heading);
+}
+
+.checkout-form h2:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.checkout-demo-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background-color: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.checkout-demo-note i {
+    color: var(--color-brand);
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.checkout-row-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkout-success-icon {
+    font-size: 3.5rem;
+    color: #3fa96a;
+    margin-bottom: 1rem;
+    display: block;
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -1202,6 +1378,17 @@ input:focus-visible {
 
     .trust-badges {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid,
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .checkout-row-fields {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dashboardSection = document.getElementById("dashboard");
-    const loginSection = document.getElementById("login");
-    const isIndexPage = !!(dashboardSection && loginSection);
-    const pagePrefix = isIndexPage ? "" : "index.html";
+    // ACCOUNT PAGE GUARD — redirect immediately if not logged in
+    const dashName = document.getElementById("dash-name");
+    if (dashName && !localStorage.getItem("loggedUser")) {
+        window.location.href = "login.html";
+        return;
+    }
 
     // THEME TOGGLE
     const themeToggle = document.getElementById("theme-toggle");
@@ -95,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function saveCart(cart) {
         localStorage.setItem("cart", JSON.stringify(cart));
         renderCart();
+        if (typeof renderCheckout === "function") renderCheckout();
     }
 
     function renderCart() {
@@ -187,6 +190,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCart();
 
+    // CHECKOUT PAGE
+    const checkoutItemsList = document.getElementById("checkout-items");
+    let renderCheckout;
+
+    if (checkoutItemsList) {
+        const checkoutEmptyState = document.getElementById("checkout-empty-state");
+        const checkoutFormSection = document.getElementById("checkout-form-section");
+        const checkoutConfirmation = document.getElementById("checkout-confirmation");
+        const checkoutForm = document.getElementById("checkout-form");
+        const shippingFee = 15;
+
+        renderCheckout = function () {
+            const cart = getCart();
+            const hasConfirmed = checkoutConfirmation && !checkoutConfirmation.classList.contains("hidden");
+            if (hasConfirmed) return; // don't fight the confirmation view after a successful order
+
+            if (cart.length === 0) {
+                if (checkoutEmptyState) checkoutEmptyState.classList.remove("hidden");
+                if (checkoutFormSection) checkoutFormSection.classList.add("hidden");
+                return;
+            }
+
+            if (checkoutEmptyState) checkoutEmptyState.classList.add("hidden");
+            if (checkoutFormSection) checkoutFormSection.classList.remove("hidden");
+
+            checkoutItemsList.innerHTML = cart
+                .map(
+                    (item) => `
+                        <li class="cart-item">
+                            <div class="cart-item-info">
+                                <span class="cart-item-name">${item.name}</span>
+                                <span class="cart-item-meta">${item.qty} × ${item.price} ر.س</span>
+                            </div>
+                            <span>${item.qty * item.price} ر.س</span>
+                        </li>`
+                )
+                .join("");
+
+            const subtotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+            const subtotalEl = document.getElementById("checkout-subtotal");
+            const shippingEl = document.getElementById("checkout-shipping");
+            const totalEl = document.getElementById("checkout-total");
+            if (subtotalEl) subtotalEl.textContent = `${subtotal} ر.س`;
+            if (shippingEl) shippingEl.textContent = `${shippingFee} ر.س`;
+            if (totalEl) totalEl.textContent = `${subtotal + shippingFee} ر.س`;
+        };
+
+        renderCheckout();
+
+        if (checkoutForm) {
+            checkoutForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const cart = getCart();
+                if (cart.length === 0) return;
+
+                const orderNumberEl = document.getElementById("order-number");
+                if (orderNumberEl) {
+                    orderNumberEl.textContent = "TQ-" + Math.floor(100000 + Math.random() * 900000);
+                }
+
+                if (checkoutConfirmation) checkoutConfirmation.classList.remove("hidden");
+                if (checkoutFormSection) checkoutFormSection.classList.add("hidden");
+                if (checkoutEmptyState) checkoutEmptyState.classList.add("hidden");
+
+                saveCart([]);
+
+                if (checkoutConfirmation) checkoutConfirmation.scrollIntoView({ behavior: "smooth" });
+            });
+        }
+    }
+
     // FAQ ACCORDION
     document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
@@ -237,6 +311,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // CONTACT FORM
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("contact-name").value.trim();
+            const email = document.getElementById("contact-email").value.trim();
+            const message = document.getElementById("contact-message").value.trim();
+            const contactMessage = document.getElementById("contact-form-message");
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !emailPattern.test(email) || !message) {
+                if (contactMessage) {
+                    contactMessage.textContent = "رجاءً تأكد من تعبئة جميع الحقول ببريد إلكتروني صحيح";
+                    contactMessage.classList.add("error-message");
+                }
+                return;
+            }
+
+            if (contactMessage) {
+                contactMessage.classList.remove("error-message");
+                contactMessage.textContent = "! شكرًا لتواصلك معنا، سنرد عليك قريبًا";
+            }
+            contactForm.reset();
+        });
+    }
+
     // DUMMY USERS DATASET
     const users = [
         {
@@ -269,7 +370,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoutBtn = document.getElementById("logout-btn");
     const loginNavLink = document.getElementById("login-nav-link");
 
-    const dashName = document.getElementById("dash-name");
     const dashUsername = document.getElementById("dash-username");
     const dashRoast = document.getElementById("dash-roast");
     const dashSubscription = document.getElementById("dash-subscription");
@@ -279,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el.textContent = new Date().getFullYear();
     });
 
-    // UPDATE UI BASED ON LOGIN STATE
+    // UPDATE NAV/UI BASED ON LOGIN STATE
     function updateUI() {
         const userJSON = localStorage.getItem("loggedUser");
         let user = null;
@@ -291,19 +391,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (user) {
-            // Navbar
             if (welcomeText) welcomeText.textContent = `Welcome, ${user.name}`;
             if (logoutBtn) logoutBtn.style.display = "inline-block";
             if (loginNavLink) {
-                loginNavLink.textContent = "Dashboard";
-                loginNavLink.setAttribute("href", `${pagePrefix}#dashboard`);
+                loginNavLink.textContent = "حسابي";
+                loginNavLink.setAttribute("href", "account.html");
             }
 
-            // Sections (only present on the index page)
-            if (dashboardSection) dashboardSection.classList.remove("hidden");
-            if (loginSection) loginSection.classList.add("hidden");
-
-            // Dashboard data
             if (dashName) dashName.textContent = user.name;
             if (dashUsername) dashUsername.textContent = user.username;
             if (dashRoast) dashRoast.textContent = user.roast;
@@ -313,11 +407,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (logoutBtn) logoutBtn.style.display = "none";
             if (loginNavLink) {
                 loginNavLink.textContent = "تسجيل دخول";
-                loginNavLink.setAttribute("href", `${pagePrefix}#login`);
+                loginNavLink.setAttribute("href", "login.html");
             }
-
-            if (dashboardSection) dashboardSection.classList.add("hidden");
-            if (loginSection) loginSection.classList.remove("hidden");
         }
     }
 
@@ -346,16 +437,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Save session
             localStorage.setItem("loggedUser", JSON.stringify(foundUser));
-
-            if (loginError) loginError.textContent = "";
-            updateUI();
-
-            // Scroll to dashboard
-            if (dashboardSection) {
-                dashboardSection.scrollIntoView({ behavior: "smooth" });
-            }
+            window.location.href = "account.html";
         });
     }
 
@@ -363,51 +446,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
             localStorage.removeItem("loggedUser");
-            updateUI();
-
-            const home = document.getElementById("home");
-            if (home) {
-                home.scrollIntoView({ behavior: "smooth" });
-            }
+            window.location.href = "index.html";
         });
-    }
-
-    // LOGIN / DASHBOARD NAV LINK BEHAVIOR (same-page smooth scroll only when both sections exist here)
-    if (loginNavLink && isIndexPage) {
-        loginNavLink.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const userJSON = localStorage.getItem("loggedUser");
-            const user = userJSON ? JSON.parse(userJSON) : null;
-
-            if (user && dashboardSection) {
-                dashboardSection.scrollIntoView({ behavior: "smooth" });
-            } else if (loginSection) {
-                loginSection.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    }
-
-    // ACTIVE NAV LINK ON SCROLL (only meaningful for in-page anchors on this page)
-    const navLinks = document.querySelectorAll(".navbar__link[href^='#']");
-    const trackedSections = Array.from(navLinks)
-        .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
-
-    if (trackedSections.length && "IntersectionObserver" in window) {
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach((link) => link.classList.remove("active"));
-                        const activeLink = document.querySelector(`.navbar__link[href='#${entry.target.id}']`);
-                        if (activeLink) activeLink.classList.add("active");
-                    }
-                });
-            },
-            { rootMargin: "-40% 0px -55% 0px" }
-        );
-        trackedSections.forEach((section) => sectionObserver.observe(section));
     }
 
     // REVEAL ON SCROLL
