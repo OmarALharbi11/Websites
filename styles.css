@@ -1,39 +1,39 @@
 :root {
-    --color-bg: #fffdf6;
-    --color-bg-alt: #fff3dc;
+    --color-bg: #faf6f0;
+    --color-bg-alt: #f3e6d6;
     --color-surface: #ffffff;
-    --color-text: #222;
-    --color-text-muted: #5c4a3a;
-    --color-heading: #3c2415;
-    --color-brand: #b9772c;
-    --color-brand-dark: #5a3210;
-    --color-navbar-bg: #fffbe5;
-    --color-border: #ddd;
-    --color-footer-bg: #2b1b10;
-    --color-footer-text: #f6e8d8;
-    --color-footer-link: #f3c48c;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --color-text: #2b2118;
+    --color-text-muted: #7a6656;
+    --color-heading: #3b2417;
+    --color-brand: #c1622d;
+    --color-brand-dark: #7a3510;
+    --color-navbar-bg: #fbf2e8;
+    --color-border: #e6d7c5;
+    --color-footer-bg: #241408;
+    --color-footer-text: #f3e4d3;
+    --color-footer-link: #e8a868;
+    --shadow-sm: 0 2px 4px rgba(59, 36, 23, 0.06);
+    --shadow-md: 0 4px 12px rgba(59, 36, 23, 0.08);
+    --shadow-lg: 0 6px 20px rgba(59, 36, 23, 0.1);
     --radius-md: 16px;
     --radius-full: 999px;
     --transition-fast: 0.2s ease;
 }
 
 [data-theme="dark"] {
-    --color-bg: #121212;
-    --color-bg-alt: #1a1714;
-    --color-surface: #1e1b18;
-    --color-text: #ece7e1;
-    --color-text-muted: #b3a99e;
-    --color-heading: #f5efe7;
-    --color-brand: #e2984f;
-    --color-brand-dark: #f3b878;
-    --color-navbar-bg: #161311;
-    --color-border: #383330;
-    --color-footer-bg: #0b0a09;
-    --color-footer-text: #f6e8d8;
-    --color-footer-link: #f3c48c;
+    --color-bg: #14100d;
+    --color-bg-alt: #1c1611;
+    --color-surface: #201a15;
+    --color-text: #ede6dd;
+    --color-text-muted: #b7a798;
+    --color-heading: #f6ebdf;
+    --color-brand: #e08a4b;
+    --color-brand-dark: #f5b37b;
+    --color-navbar-bg: #18130f;
+    --color-border: #3a2e22;
+    --color-footer-bg: #0a0705;
+    --color-footer-text: #f3e4d3;
+    --color-footer-link: #e8a868;
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.6);
@@ -243,7 +243,7 @@ input:focus-visible {
 }
 
 .icon-btn:hover {
-    background-color: rgba(185, 119, 44, 0.12);
+    background-color: rgba(193, 98, 45, 0.12);
 }
 
 .user-area {
@@ -308,13 +308,13 @@ input:focus-visible {
     cursor: pointer;
     background-color: var(--color-brand);
     color: #fff;
-    box-shadow: 0 4px 10px rgba(185, 119, 44, 0.3);
+    box-shadow: 0 4px 10px rgba(193, 98, 45, 0.3);
     transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.2s ease;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 7px 16px rgba(185, 119, 44, 0.4);
+    box-shadow: 0 7px 16px rgba(193, 98, 45, 0.4);
     filter: brightness(1.05);
 }
 
@@ -330,7 +330,7 @@ input:focus-visible {
 }
 
 .btn-outline:hover {
-    background-color: rgba(185, 119, 44, 0.1);
+    background-color: rgba(193, 98, 45, 0.1);
 }
 
 .btn-small {
@@ -502,7 +502,7 @@ input:focus-visible {
 .checkout-form input:focus {
     outline: none;
     border-color: var(--color-brand);
-    box-shadow: 0 0 0 3px rgba(185, 119, 44, 0.2);
+    box-shadow: 0 0 0 3px rgba(193, 98, 45, 0.2);
 }
 
 .login-form.shake {
